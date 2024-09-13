@@ -37,7 +37,6 @@ parameters:
     _target_: diffusion.models.models.stable_diffusion_xl
     pretrained: false
     clip_qkv: null
-    model_name: stabilityai/stable-diffusion-xl-base-1.0
     unet_model_name: stabilityai/stable-diffusion-xl-base-1.0
     vae_model_name: madebyollin/sdxl-vae-fp16-fix
     precomputed_latents: false
