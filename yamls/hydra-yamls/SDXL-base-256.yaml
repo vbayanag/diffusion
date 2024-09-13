@@ -23,8 +23,8 @@ model:
   val_metrics:
     - _target_: torchmetrics.MeanSquaredError
 dataset:
-  train_batch_size: # Global training batch size
-  eval_batch_size: # Global evaluation batch size
+  train_batch_size: 1024 # Global training batch size
+  eval_batch_size: 256 # Global evaluation batch size
   train_dataset:
     _target_: diffusion.datasets.image_caption.build_streaming_image_caption_dataloader
     remote:
