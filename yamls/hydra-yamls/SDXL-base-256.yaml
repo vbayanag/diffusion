@@ -19,6 +19,7 @@ model:
   precomputed_latents: false
   encode_latents_in_fp16: true
   fsdp: true
+  use_xformers: false
   val_metrics:
     - _target_: torchmetrics.MeanSquaredError
 dataset:
