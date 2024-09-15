@@ -29,7 +29,8 @@ def main(args):
     """Converts coco captions to MDS."""
     data_path = args.data_path
     captions_path = args.captions_path
-    data = json.loads(captions_path)
+    captions =open(captions_path, 'r')
+    data = json.loads(captions)
 
     # create {image_id: list[captions]} dictionary
     coco_captions = {}
