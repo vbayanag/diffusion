@@ -17,7 +17,7 @@ args.add_argument('--data_path',
                   required=True,
                   help='Path to local coco2014 validation image directory.\
                             ex: data/val2014/')
-args.add_argument('--captions-path',
+args.add_argument('--captions_path',
                   type=str,
                   required=True,
                   help='Path to local coco2014 val annotation json.\
