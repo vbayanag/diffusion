@@ -42,7 +42,7 @@ def main(args):
             coco_captions[image_id] = {'captions': [caption]}
 
         if 'image_file' not in coco_captions[image_id]:
-            image_file = f'{data_path}/val2014/COCO_val2014_{image_id:012d}.jpg'
+            image_file = f'{data_path}/{image_id:012d}.jpg'
             coco_captions[image_id]['image_file'] = image_file
 
     print('creating random subset')
