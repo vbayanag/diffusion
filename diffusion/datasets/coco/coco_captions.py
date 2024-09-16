@@ -101,6 +101,7 @@ def build_streaming_cocoval_dataloader(
     use_crop: bool = False,
     caption_selection='first',
     num_canonical_nodes: Optional[int] = None,
+    tokenizer: Optional[str]: None, # Currently unused, required to be defined for training on COCO dataset
     **dataloader_kwargs,
 ):
     """Builds a streaming dataloader for the COCO validation set."""
