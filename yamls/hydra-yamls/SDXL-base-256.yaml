@@ -13,7 +13,7 @@ model:
   _target_: diffusion.models.models.stable_diffusion_xl
   pretrained: false
   clip_qkv: null
-  model_name: stabilityai/stable-diffusion-xl-base-1.0
+  #model_name: stabilityai/stable-diffusion-xl-base-1.0
   unet_model_name: stabilityai/stable-diffusion-xl-base-1.0
   vae_model_name: madebyollin/sdxl-vae-fp16-fix
   precomputed_latents: false
@@ -26,25 +26,26 @@ dataset:
   train_batch_size: 1024 # Global training batch size
   eval_batch_size: 256 # Global evaluation batch size
   train_dataset:
-    _target_: diffusion.datasets.image_caption.build_streaming_image_caption_dataloader
-    remote:
-      # Path to object store bucket(s)
-    caption_drop_prob: 0.1
-    caption_key: caption
-    image_key: jpg
+    _target_: diffusion.datasets.coco.coco_captions.build_streaming_cocoval_dataloader
+    #diffusion.datasets.image_caption.build_streaming_image_caption_dataloader
+    remote: /root/fiftyone/tmp/
+    # Path to object store bucket(s)
+    #caption_drop_prob: 0.1
+    #caption_key: caption
+    #image_key: jpg
     resize_size: 256
-    crop_type: random
-    dataloader_kwargs:
-      drop_last: true
-      num_workers: 8
-      persistent_workers: true
-      pin_memory: true
-      prefetch_factor: 2
-    streaming_kwargs:
-      cache_limit: 5tb
-      download_timeout: 12000
-      num_canonical_nodes: 8
-      shuffle: true
+    #crop_type: random
+    #dataloader_kwargs:
+    drop_last: true
+    num_workers: 8
+    persistent_workers: true
+    pin_memory: true
+    prefetch_factor: 2
+    #    streaming_kwargs:
+    # cache_limit: 5tb
+    # download_timeout: 12000
+    # num_canonical_nodes: 8
+    # shuffle: true
   eval_dataset:
     _target_: diffusion.datasets.coco.coco_captions.build_streaming_cocoval_dataloader
     remote:  # Path to object store bucket

@@ -30,7 +30,7 @@ def main(args):
     data_path = args.data_path
     captions_path = args.captions_path
     captions =open(captions_path, 'r')
-    data = json.loads(captions)
+    data = json.loads(captions.read())
 
     # create {image_id: list[captions]} dictionary
     coco_captions = {}
