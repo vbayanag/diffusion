@@ -106,6 +106,8 @@ def train(config: DictConfig) -> None:
     # Load train dataset. Currently this expects to load according to the datasetHparam method.
     # This means adding external datasets is currently not super easy. Will refactor or check for
     # upstream composer changes that could make this easier.
+    print(tokenizer)
+    print(config.dataset.train_dataset)
     if tokenizer:
         train_dataloader: Union[Iterable, DataSpec, Dict[str, Any]] = hydra.utils.instantiate(
             config.dataset.train_dataset,
