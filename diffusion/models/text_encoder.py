@@ -90,6 +90,7 @@ class MultiTextEncoder(torch.nn.Module):
             input_ids = input_ids.unsqueeze(dim=1)
         if attention_mask is not None and len(attention_mask.shape) == 2:
             attention_mask = attention_mask.unsqueeze(dim=1)
+        print(input_ids.shape, attention_mask.shape)
         if input_ids.shape[1] != len(self.text_encoders) or (attention_mask is not None and
                                                              attention_mask.shape[1] != len(self.text_encoders)):
             raise ValueError(
