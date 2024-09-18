@@ -118,6 +118,7 @@ def build_streaming_cocoval_dataloader(
         caption_selection=caption_selection,
         transform=transform,
         num_canonical_nodes=num_canonical_nodes,
+        tokenizer_name_or_path = tokenizer
     )
 
     dataloader = DataLoader(dataset=dataset, batch_size=batch_size, drop_last=False, **dataloader_kwargs)
