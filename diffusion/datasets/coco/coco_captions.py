@@ -95,7 +95,7 @@ class StreamingCOCOCaption(StreamingDataset):
 def build_streaming_cocoval_dataloader(
     batch_size: int,
     remote: str,
-    local: str = '/tmp/mds-cache/mds-coco-val/',
+    local: str = None,
     shuffle: bool = False,
     resize_size: int = 512,
     use_crop: bool = False,
