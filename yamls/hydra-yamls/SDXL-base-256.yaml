@@ -48,7 +48,7 @@ dataset:
     # shuffle: true
   eval_dataset:
     _target_: diffusion.datasets.coco.coco_captions.build_streaming_cocoval_dataloader
-    remote:  /root/fiftyone/tmp# Path to object store bucket
+    remote:  /root/fiftyone/tmp/ # Path to object store bucket
     resize_size: 256
     prefetch_factor: 2
     num_workers: 8
