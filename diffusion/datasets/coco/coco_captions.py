@@ -101,7 +101,7 @@ def build_streaming_cocoval_dataloader(
     use_crop: bool = False,
     caption_selection='first',
     num_canonical_nodes: Optional[int] = None,
-    tokenizer: Optional[str] = None, # Currently unused, required to be defined for training on COCO dataset
+    # tokenizer: Optional[str] = None, # Currently unused, required to be defined for training on COCO dataset
     **dataloader_kwargs,
 ):
     """Builds a streaming dataloader for the COCO validation set."""
@@ -117,8 +117,7 @@ def build_streaming_cocoval_dataloader(
         batch_size=batch_size,
         caption_selection=caption_selection,
         transform=transform,
-        num_canonical_nodes=num_canonical_nodes,
-        tokenizer_name_or_path = tokenizer
+        num_canonical_nodes=num_canonical_nodes
     )
 
     dataloader = DataLoader(dataset=dataset, batch_size=batch_size, drop_last=False, **dataloader_kwargs)
