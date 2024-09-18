@@ -28,7 +28,8 @@ dataset:
   train_dataset:
     _target_: diffusion.datasets.coco.coco_captions.build_streaming_cocoval_dataloader
     #diffusion.datasets.image_caption.build_streaming_image_caption_dataloader
-    remote: /root/fiftyone/tmp/
+    remote: /root/fiftyone/tmp/ #where data is stored
+    local: /root/fiftyone/cache_train/ #cached data
     # Path to object store bucket(s)
     #caption_drop_prob: 0.1
     #caption_key: caption
@@ -49,6 +50,7 @@ dataset:
   eval_dataset:
     _target_: diffusion.datasets.coco.coco_captions.build_streaming_cocoval_dataloader
     remote:  /root/fiftyone/tmp/ # Path to object store bucket
+    local: /root/fiftyone/cache_val/
     resize_size: 256
     prefetch_factor: 2
     num_workers: 8
