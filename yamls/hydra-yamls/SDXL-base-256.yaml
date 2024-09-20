@@ -33,7 +33,7 @@ dataset:
     # Path to object store bucket(s)
     caption_drop_prob: 0.1
     caption_key: captions
-    image_key: jpg
+    image_key: image
     resize_size: 256
     crop_type: random
     sdxl_conditioning: True
