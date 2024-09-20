@@ -31,22 +31,23 @@ dataset:
     remote: /root/fiftyone/tmp/ #where data is stored
     local: /root/fiftyone/cache_train/ #cached data
     # Path to object store bucket(s)
-    #caption_drop_prob: 0.1
-    #caption_key: caption
-    #image_key: jpg
+    caption_drop_prob: 0.1
+    caption_key: captions
+    image_key: jpg
     resize_size: 256
-    #crop_type: random
-    #dataloader_kwargs:
-    #drop_last: true
-    num_workers: 8
-    persistent_workers: true
-    pin_memory: true
-    prefetch_factor: 2
-    #    streaming_kwargs:
-    # cache_limit: 5tb
-    # download_timeout: 12000
-    # num_canonical_nodes: 8
-    # shuffle: true
+    crop_type: random
+    sdxl_conditioning: True
+    dataloader_kwargs:
+      drop_last: true
+      num_workers: 8
+      persistent_workers: true
+      pin_memory: true
+      prefetch_factor: 2
+    streaming_kwargs:
+      cache_limit: 5tb
+      download_timeout: 12000
+      num_canonical_nodes: 8
+      shuffle: true
   eval_dataset:
     _target_: diffusion.datasets.coco.coco_captions.build_streaming_cocoval_dataloader
     remote:  /root/fiftyone/tmp/ # Path to object store bucket
