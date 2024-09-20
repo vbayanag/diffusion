@@ -26,8 +26,8 @@ dataset:
   train_batch_size: 1024 # Global training batch size
   eval_batch_size: 256 # Global evaluation batch size
   train_dataset:
-    _target_: diffusion.datasets.coco.coco_captions.build_streaming_cocoval_dataloader
-    #diffusion.datasets.image_caption.build_streaming_image_caption_dataloader
+    #_target_: diffusion.datasets.coco.coco_captions.build_streaming_cocoval_dataloader
+    _target_: diffusion.datasets.image_caption.build_streaming_image_caption_dataloader
     remote: /root/fiftyone/tmp/ #where data is stored
     local: /root/fiftyone/cache_train/ #cached data
     # Path to object store bucket(s)
