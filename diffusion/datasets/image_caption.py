@@ -103,7 +103,7 @@ class StreamingImageCaptionDataset(StreamingDataset):
     def __getitem__(self, index):
         sample = super().__getitem__(index)
         out = {}
-
+        print(sample)
         # Image
         img = sample[self.image_key]
         if not isinstance(img, Image.Image):
